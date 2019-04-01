@@ -1,9 +1,9 @@
 pipeline {
 	agent { label 'imagebuilder' }
 	stages {
-		stage('pull artifact') {
+		stage('Pull artifacts') {
 			steps {
-				copyArtifacts filter: '*', fingerprintArtifacts: true, projectName: 'thunderclap-fpga-arria10', selector: specific('${BUILD_NUMBER}')
+				copyArtifacts filter: '*', fingerprintArtifacts: true, projectName: 'thunderclap-fpga-arria10')
 			}
 		}
 
