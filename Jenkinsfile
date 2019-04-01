@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Pull artifacts') {
 			steps {
-				copyArtifacts filter: '*', fingerprintArtifacts: true, projectName: 'thunderclap-fpga-arria10'
+				copyArtifacts filter: '*', fingerprintArtifacts: true, projectName: 'thunderclap-fpga-arria10/master'
 			}
 		}
 
