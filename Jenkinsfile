@@ -9,7 +9,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-				sh './build_thunderclap_sdcard.sh'
+				sh './build_thunderclap_ubuntu.sh'
 			}
 		}
 	}
