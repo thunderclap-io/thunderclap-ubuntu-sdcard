@@ -1,5 +1,6 @@
 pipeline {
 	agent { label 'imagebuilder' }
+	options { buildDiscarder(logRotator(numToKeepStr: '1')) }
 	stages {
 		stage('Pull artifacts') {
 			steps {
@@ -13,6 +14,11 @@ pipeline {
 				      source $SOCEDS_DEST_ROOT/env.sh && ./build_thunderclap_ubuntu.sh
 				'''
 			}
+		}
+	}
+	post {
+		always {
+			archiveArtifacts artifacts: "sdimage.img.xz", fingerprint:true 
 		}
 	}
 }
