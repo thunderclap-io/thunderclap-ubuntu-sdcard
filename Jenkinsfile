@@ -9,7 +9,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-				sh './build_thunderclap_ubuntu.sh'
+				sh 'source $SOCEDS_DEST_ROOT/env.sh && ./build_thunderclap_ubuntu.sh'
 			}
 		}
 	}
