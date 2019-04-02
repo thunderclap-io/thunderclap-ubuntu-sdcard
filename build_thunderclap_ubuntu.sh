@@ -13,6 +13,10 @@ function umount_multiple
 umount_multiple mnt/1
 umount_multiple mnt/2
 
+# remove old images
+rm -f sdimage.img sdimage.img.xz
+rm -rf mnt
+
 ./scripts/build_ubuntu_sdcard.sh  boards/enclustra-mercury-aa1-pe1 refdes system && \
 pxz sdimage.img
 
