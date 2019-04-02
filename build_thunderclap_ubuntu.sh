@@ -17,7 +17,13 @@ umount_multiple mnt/2
 rm -f sdimage.img sdimage.img.xz
 rm -rf mnt
 
-./scripts/build_ubuntu_sdcard.sh  boards/enclustra-mercury-aa1-pe1 refdes system && \
+# copy in the thunderclap binary to the image
+mkdir payload
+mkdir payload/root
+mv thunderclap payload/root/thunderclap
+
+# build the SD card and compress it
+./scripts/build_ubuntu_sdcard.sh  boards/enclustra-mercury-aa1-pe1 refdes system payload && \
 pxz sdimage.img
 
 # make sure everything is unmounted

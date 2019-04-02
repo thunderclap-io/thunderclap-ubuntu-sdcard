@@ -5,6 +5,7 @@ pipeline {
 		stage('Pull artifacts') {
 			steps {
 				copyArtifacts filter: '**', fingerprintArtifacts: true, projectName: 'thunderclap-fpga-arria10/master'
+				copyArtifacts filter: '**', fingerprintArtifacts: true, projectName: 'thunderclap-qemu/master'
 			}
 		}
 
