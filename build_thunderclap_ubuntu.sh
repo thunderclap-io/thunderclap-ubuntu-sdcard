@@ -23,7 +23,7 @@ mkdir payload/root
 mv build-arm/thunderclap payload/root/thunderclap
 
 # build the SD card and compress it
-./scripts/build_ubuntu_sdcard.sh  boards/enclustra-mercury-aa1-pe1 refdes system payload hello-traditional && \
+./scripts/build_ubuntu_sdcard.sh  boards/enclustra-mercury-aa1-pe1 refdes system payload libpixman-1-0 && \
 pxz sdimage.img
 
 # make sure everything is unmounted
