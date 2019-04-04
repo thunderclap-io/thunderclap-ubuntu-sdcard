@@ -18,8 +18,7 @@ rm -f sdimage.img sdimage.img.xz
 rm -rf mnt
 
 # copy in the thunderclap binary to the image
-mkdir payload
-mkdir payload/root
+mkdir -p payload/root
 mv build-arm/thunderclap payload/root/thunderclap
 
 # build the SD card and compress it
