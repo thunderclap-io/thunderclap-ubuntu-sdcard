@@ -12,6 +12,7 @@ function umount_multiple
 # try to clean up errant loopback mounts
 umount_multiple mnt/1
 umount_multiple mnt/2
+losetup -D
 
 # remove old images
 rm -f sdimage.img sdimage.img.xz
