@@ -30,7 +30,7 @@ pipeline {
 	}
 	post {
 		always {
-			archiveArtifacts artifacts: "*.img.xz", fingerprint:true 
+			archiveArtifacts artifacts: "*-sd.img.xz", fingerprint:true 
 		}
 	}
 }
