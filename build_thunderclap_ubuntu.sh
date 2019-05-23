@@ -19,7 +19,7 @@ losetup -D
 sync
 
 # remove old images
-rm -f sdimage.img sdimage.img.xz
+rm -f sdimage.img sdimage.img.xz *-sd.img.xz
 rm -rf mnt
 
 # copy in the thunderclap binary to the image
