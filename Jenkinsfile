@@ -12,6 +12,7 @@ pipeline {
 		stage ('Build Intel A10 SoC devkit') {
 			steps {
 				sh '''#!/bin/bash
+                                      rm -f a10socdevkit-sd.img.xz || true
 				      source $SOCEDS_DEST_ROOT/env.sh && ./build_thunderclap_ubuntu.sh intel-a10soc-devkit
 				      mv sdimage.img.xz a10socdevkit-sd.img.xz
 				'''
@@ -20,6 +21,7 @@ pipeline {
 		stage ('Build Enclustra AA1/PE1') {
 			steps {
 				sh '''#!/bin/bash
+                                      rm -f enclustra-sd.img.xz || true
 				      source $SOCEDS_DEST_ROOT/env.sh && ./build_thunderclap_ubuntu.sh enclustra-mercury-aa1-pe1
 				      mv sdimage.img.xz enclustra-sd.img.xz
 				'''
